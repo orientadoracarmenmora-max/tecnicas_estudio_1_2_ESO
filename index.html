@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estudia con método · 1.º y 2.º de ESO</title>
+<link rel="stylesheet" href="estilo.css">
+<script defer src="recursos/paginas.js"></script>
+<script defer src="recursos/cuestionario.js"></script>
+<script defer src="presentacion.js"></script>
+</head>
+<body>
+<header class="barra">
+  <button id="escuchar">▶ Escuchar</button>
+  <button id="detener" disabled>■ Detener</button>
+  <details id="opciones-voz">
+    <summary>Elegir voz y velocidad</summary>
+    <div class="opciones-voz">
+      <label>Voz en español de España <select id="voz"><option value="">Predeterminada</option></select></label>
+      <label>Velocidad <select id="velocidad"><option value=".75">Lenta</option><option value=".9">Algo más lenta</option><option value="1" selected>Normal</option><option value="1.15">Algo más rápida</option><option value="1.3">Rápida</option></select></label>
+    </div>
+  </details>
+  <details id="acceso">
+    <summary>Accesibilidad</summary>
+    <div class="menu">
+      <div class="tamano" role="group" aria-label="Tamaño de letra">
+        <button id="reducir" aria-label="Reducir tamaño de letra">A−</button>
+        <output id="tamano" aria-live="polite">100 %</output>
+        <button id="ampliar" aria-label="Aumentar tamaño de letra">A+</button>
+      </div>
+      <label>Tipo de letra <select id="fuente"><option value="original">Original</option><option value="Arial">Arial</option><option value="Verdana">Verdana</option></select></label>
+      <label>Contraste <select id="contraste"><option value="original">Presentación original</option><option value="blanco-negro">Blanco sobre negro</option><option value="negro-blanco">Negro sobre blanco</option></select></label>
+      <button id="restablecer">Presentación original</button>
+    </div>
+  </details>
+</header>
+
+
+<p id="estado" role="status"></p>
+<main>
+  <div id="escenario" class="escenario"></div>
+  <nav aria-label="Navegación de la presentación">
+    <button id="anterior">← Anterior</button>
+    <button id="ir-indice" class="casa" aria-label="Ir al índice" title="Ir al índice"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8M6 9v11h12V9M10 20v-6h4v6"/></svg></button>
+    <button id="siguiente">Siguiente →</button>
+  </nav>
+  <footer class="derechos">2026 Carmen Martínez Mora, todos los derechos reservados.</footer>
+</main>
+<dialog id="tarjeta" aria-labelledby="titulo-tarjeta">
+  <div class="acciones">
+    <h2 id="titulo-tarjeta"></h2>
+    <button id="cerrar">Cerrar ×</button>
+  </div>
+  <div id="escenario-tarjeta" class="escenario"></div>
+  <nav class="pie-tarjeta" aria-label="Controles de la tarjeta"><button id="cerrar-tarjeta-abajo">Cerrar tarjeta ×</button><button id="indice-tarjeta" class="casa" aria-label="Ir al índice" title="Ir al índice"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8M6 9v11h12V9M10 20v-6h4v6"/></svg></button></nav>
+  <p id="estado-tarjeta" role="status"></p>
+  <footer class="derechos">2026 Carmen Martínez Mora, todos los derechos reservados.</footer>
+</dialog>
+<dialog id="cuestionario" aria-labelledby="titulo-cuestionario">
+  <div class="acciones">
+    <h2 id="titulo-cuestionario">Cómo estudio</h2>
+    <button id="escuchar-cuestionario">▶ Escuchar actividad</button>
+    <button id="detener-cuestionario" disabled>■ Detener</button>
+    <button id="cerrar-cuestionario">Volver a la presentación ×</button>
+  </div>
+  <p id="estado-cuestionario" role="status"></p>
+  <div id="contenido-cuestionario"></div>
+  <nav aria-label="Volver al índice"><button id="indice-cuestionario" class="casa" aria-label="Ir al índice" title="Ir al índice"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8M6 9v11h12V9M10 20v-6h4v6"/></svg></button></nav>
+</dialog>
+<div id="papel" aria-hidden="true"></div>
+<div id="papel-resultado" aria-hidden="true"></div>
+<noscript>Activa JavaScript para usar la presentación.</noscript>
+</body>
+</html>
